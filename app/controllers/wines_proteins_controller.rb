@@ -1,7 +1,7 @@
 class WinesProteinsController < ApplicationController
     def index
         @wines_proteins = WinesProtein.all
-        render json: @wines
+        render json: @wines_proteins
     end
 
     def show
