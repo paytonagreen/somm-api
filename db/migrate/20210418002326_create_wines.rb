@@ -4,7 +4,6 @@ class CreateWines < ActiveRecord::Migration[6.1]
       t.string :wine_name
       t.string :wine_description
       t.index :wine_id 
-      t.text :proteins, array: true, default: []
       t.timestamps
     end
   end
