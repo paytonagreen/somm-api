@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_181730) do
+ActiveRecord::Schema.define(version: 2021_04_24_234613) do
 
   create_table "proteins", force: :cascade do |t|
     t.string "protein_name"
+    t.integer "protein_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -24,9 +25,19 @@ ActiveRecord::Schema.define(version: 2021_04_24_181730) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "is_admin", default: false
+  end
+
   create_table "wines", force: :cascade do |t|
     t.string "wine_name"
     t.string "wine_description"
+    t.integer "wine_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

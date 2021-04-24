@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  #user routes
+  post '/users', to: 'users#create'
+  get '/users/:user_id', to: 'users#show'
+  post '/users', to: 'users#index'
+  #session routes
+  post '/login', to: 'sessions#create'
+  post '/logout', to: 'session#destroy'
+  get '/logged_in', to: 'sessions#is_logged_in?'
+  resources :users, only: [:create, :show, :index] do
+    resources :items, only: [:create, :show, :index, :destroy]
+  end
+  #DB routes
   resources :wines_sauces, only: [:index, :create]
   resources :sauces, only: [:index, :show, :create, :update, :destroy ] do
     get '/wines' => 'sauces#show_wines'
