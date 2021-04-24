@@ -15,6 +15,9 @@ class SaucesController < ApplicationController
     end
 
     def create
+        params.each do |key,value|
+            Rails.logger.warn "Param #{key}: #{value}"
+        end
         @sauce = Sauce.create(
             sauce_name: params[:sauce_name]
         )

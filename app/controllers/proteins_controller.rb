@@ -15,7 +15,7 @@ class ProteinsController < ApplicationController
     end
 
     def create
-        @Protein = Protein.create(
+        @protein = Protein.create(
             protein_name: params[:protein_name]
         )
         render json: @protein
