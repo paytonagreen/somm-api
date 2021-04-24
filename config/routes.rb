@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :wines_sauces, only: [:index, :create]
+  resources :sauces, only: [:index, :show, :create, :update, :destroy ] do
+    get '/wines' => 'sauces#show_wines'
+  end
   resources :wines_proteins, only: [:index, :create]
   resources :wines, only: [:index, :show, :create, :update, :destroy ]
   resources :proteins, only: [:index, :show, :show_wines, :create, :update, :destroy ] do

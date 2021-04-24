@@ -10,13 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_18_011547) do
+ActiveRecord::Schema.define(version: 2021_04_24_181730) do
 
   create_table "proteins", force: :cascade do |t|
     t.string "protein_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"protein_id\"", name: "index_proteins_on_protein_id"
+  end
+
+  create_table "sauces", force: :cascade do |t|
+    t.string "sauce_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "wines", force: :cascade do |t|
@@ -24,12 +29,18 @@ ActiveRecord::Schema.define(version: 2021_04_18_011547) do
     t.string "wine_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index "\"wine_id\"", name: "index_wines_on_wine_id"
   end
 
   create_table "wines_proteins", force: :cascade do |t|
     t.integer "wine_id"
     t.integer "protein_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wines_sauces", force: :cascade do |t|
+    t.integer "wine_id"
+    t.integer "sauce_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
