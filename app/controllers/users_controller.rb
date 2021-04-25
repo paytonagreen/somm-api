@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
     def index
         @users = User.all 
             if @users
@@ -7,7 +8,7 @@ class UsersController < ApplicationController
                 }
             else
                 render json: {
-                    status: 500
+                    status: 500,
                     errors: ['no users found']
                 }
             end
