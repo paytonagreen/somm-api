@@ -38,5 +38,6 @@ module ASommForYouApi
     config.api_only = false
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore
+    config.session_store :cookie_store, key: '_a_somm_for_you', domain: '_a_somm_for_you_json_api', same_site: :none, secure: true
   end
 end

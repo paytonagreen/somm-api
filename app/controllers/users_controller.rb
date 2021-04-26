@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = user.find(params[:id])
+        @user = User.find(params[:id])
             if @user
                 render json: {
                     user: @user
@@ -44,9 +44,19 @@ class UsersController < ApplicationController
             end
     end
 
+    def update
+        if logged_in? && current_user
+            @user = User.find(params[:id])
+            @user.update(
+                is_admin: params[:is_admin]
+            )
+            render json: @user
+        end
+    end
+
     private
 
         def user_params
-            params.require(:user).permit(:username, :password, :password_confirmation)
+            params.require(:user).permit(:username, :is_admin, :email, :password, :password_confirmation, :is_admin)
         end
 end

@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
+  # global options responder -> makes sure OPTION request for CORS endpoints work
+  match '*path', via: [:options], to: lambda {|_| [204, { 'Content-Type' => 'text/plain' }]}
   #user routes
-  post '/users', to: 'users#create'
-  get '/users/:user_id', to: 'users#show'
-  post '/users', to: 'users#index'
+  resources :users, only: [:create, :show, :index, :update]
   #session routes
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy'
