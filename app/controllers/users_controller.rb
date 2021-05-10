@@ -54,6 +54,15 @@ class UsersController < ApplicationController
         end
     end
 
+    def destroy
+        if logged_in? && current_user
+            @users = User.all
+            @user = User.find(params[:id])
+            @user.destroy
+            render json = @users
+        end
+    end
+
     private
 
         def user_params
