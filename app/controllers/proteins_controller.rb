@@ -1,7 +1,11 @@
 class ProteinsController < ApplicationController
     def index
-        @proteins = Protein.all
-        render json: @proteins
+        @proteins = Protein.paginate(page: params[:page], per_page: params[:per_page]).order('name')
+        render json: {
+            proteins: @proteins,
+            total_pages: @proteins.total_pages,
+            total_entries: @proteins.total_entries
+    }
     end
 
     def show

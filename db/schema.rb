@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_24_234613) do
+ActiveRecord::Schema.define(version: 2021_05_11_001552) do
 
   create_table "proteins", force: :cascade do |t|
-    t.string "protein_name"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sauces", force: :cascade do |t|
-    t.string "sauce_name"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_04_24_234613) do
   end
 
   create_table "wines", force: :cascade do |t|
-    t.string "wine_name"
+    t.string "name"
     t.string "wine_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
