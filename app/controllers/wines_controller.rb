@@ -1,7 +1,11 @@
 class WinesController < ApplicationController
     def index
-        @wines = Wine.all
-        render json: @wines
+        @wines = Wine.paginate(page: params[:page], per_page: params[:per_page]).order('name')
+        render json: {
+            wines: @wines,
+            total_pages: @wines.total_pages,
+            total_entries: @wines.total_entries
+        }
     end
 
     def show

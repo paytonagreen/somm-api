@@ -1,7 +1,11 @@
 class SaucesController < ApplicationController
     def index
-        @sauces = Sauce.all
-        render json: @sauces
+        @sauces = Sauce.paginate(page: params[:page], per_page: params[:per_page]).order('name')
+        render json: {
+            sauces: @sauces,
+            total_pages: @sauces.total_pages,
+            total_entries: @sauces.total_entries
+        }
     end
 
     def show
