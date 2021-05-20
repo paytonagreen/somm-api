@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     get '/grapes' => 'sauces#show_grapes'
   end
   resources :wines_proteins, only: [:index, :create]
-  resources :wines, only: [:index, :show, :create, :update, :destroy ]
+  resources :wines, only: [:index, :show, :show_grapes, :create, :update, :destroy ] do
+    get '/grapes' => 'wines#show_grapes'
+  end
   resources :proteins, only: [:index, :show, :show_wines, :create, :update, :destroy ] do
     get '/wines' => 'proteins#show_wines'
     get '/grapes' => 'proteins#show_grapes'
