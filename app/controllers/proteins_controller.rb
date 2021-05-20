@@ -20,7 +20,7 @@ class ProteinsController < ApplicationController
 
     def create
         @protein = Protein.create(
-            protein_name: params[:protein_name]
+            name: params[:name]
         )
         render json: @protein
     end
@@ -28,7 +28,7 @@ class ProteinsController < ApplicationController
     def update
         @protein = Protein.find(params[:id])
         @protein.update(
-            protein_name: params[:protein_name]
+            name: params[:name]
         )
         render json: @protein
     end

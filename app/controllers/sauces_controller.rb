@@ -23,7 +23,7 @@ class SaucesController < ApplicationController
             Rails.logger.warn "Param #{key}: #{value}"
         end
         @sauce = Sauce.create(
-            sauce_name: params[:sauce_name]
+            name: params[:name]
         )
         render json: @sauce
     end
@@ -31,7 +31,7 @@ class SaucesController < ApplicationController
     def update
         @sauce = Sauce.find(params[:id])
         @sauce.update(
-            sauce_name: params[:sauce_name]
+            name: params[:name]
         )
         render json: @sauce
     end
