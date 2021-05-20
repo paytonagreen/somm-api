@@ -21,8 +21,20 @@ class AccountsController < ApplicationController
 
     def create
         @account = Account.create(name: params[:name])
-        @admin = User.create(username: params[:username], account_id: @account.id, email: [params[:email]], password:[params[:password]], is_admin: true)
-        render json: @account
+        @user = User.new(username: params[:username], account_id: @account.id, email: params[:email], password:params[:password], password_confirmation: params[:password_confirmation], is_admin: true)
+        if @user.save
+            login!
+            render json: {
+                status: :created,
+                account: @account,
+                user: @user
+            }
+        else
+            render json: {
+                status: 500,
+                errors: @user.errors.full_messages
+            }
+        end
     end
 
     def update
@@ -38,4 +50,9 @@ class AccountsController < ApplicationController
         render json: @accounts
     end
 
+    private
+
+        def user_params
+            params.require(:user).permit(:username, :is_admin, :email, :password, :password_confirmation, :is_admin, :account_id)
+        end
 end

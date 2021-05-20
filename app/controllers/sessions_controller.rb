@@ -8,6 +8,11 @@ class SessionsController < ApplicationController
             logged_in: true,
             user: @user
         }
+        elsif @user && !@user.authenticate(session_params[:password])
+        render json: {
+            status: 401,
+            errors: ['incorrect password']
+        }
         else
         render json: { 
             status: 401,

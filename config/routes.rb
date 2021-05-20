@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :grapes
   resources :accounts_dishes
   resources :accounts_wines
   resources :accounts
