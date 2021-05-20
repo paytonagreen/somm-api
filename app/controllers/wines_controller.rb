@@ -16,7 +16,7 @@ class WinesController < ApplicationController
     def create
         @wine = Wine.create(
             name: params[:name],
-            wine_description: params[:wine_description],
+            description: params[:description],
         )
         render json: @wine
     end
@@ -25,7 +25,7 @@ class WinesController < ApplicationController
         @wine = Wine.find(params[:id])
         @wine.update(
             name: params[:name],
-            wine_description: params[:wine_description],
+            description: params[:description],
         )
         render json: @wine
     end

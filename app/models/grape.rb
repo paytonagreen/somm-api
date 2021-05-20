@@ -1,2 +1,3 @@
 class Grape < ApplicationRecord
-end
+    has_many :proteins_grapes
+    has_many :proteins, through: :proteins_grapes

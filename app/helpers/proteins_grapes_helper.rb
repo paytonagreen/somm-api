@@ -1,0 +1,2 @@
+module ProteinsGrapesHelper
+end
