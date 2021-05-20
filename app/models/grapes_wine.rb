@@ -1,0 +1,2 @@
+class GrapesWine < ApplicationRecord
+end

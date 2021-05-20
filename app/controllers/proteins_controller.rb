@@ -17,6 +17,11 @@ class ProteinsController < ApplicationController
         @protein = Protein.find(params[:protein_id])
         render json: @protein.wines
     end
+    
+    def show_grapes
+        @protein = Protein.find(params[:protein_id])
+        render json: @protein.grapes
+    end
 
     def create
         @protein = Protein.create(

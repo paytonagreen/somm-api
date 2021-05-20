@@ -12,6 +12,11 @@ class WinesController < ApplicationController
         @wine = Wine.find(params[:id])
         render json: @wine
     end
+    
+    def show_grapes
+        @wine = Wine.find(params[:id])
+        render json: @wine.grapes
+    end
 
     def create
         @wine = Wine.create(

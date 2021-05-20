@@ -18,6 +18,16 @@ class AccountsController < ApplicationController
             total_entries: @account_wines.total_entries
         }
     end
+    
+    def show_grapes
+        @account = Account.find(params[:account_id])
+        @account_grapes = @account.grapes.paginate(page: params[:page], per_page: params[:per_page]).order('name')
+        render json: {
+            grapes: @account_grapes,
+            total_pages: @account_grapes.total_pages,
+            total_entries: @account_grapes.total_entries
+        }
+    end
 
     def create
         @account = Account.create(name: params[:name])

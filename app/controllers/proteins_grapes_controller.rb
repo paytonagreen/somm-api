@@ -5,7 +5,7 @@ class ProteinsGrapesController < ApplicationController
     end
 
     def show
-        @proteins_grape = ProteinGrape.find(params[:id])
+        @proteins_grape = ProteinsGrape.find(params[:id])
         render json: @proteins_grape
     end
 

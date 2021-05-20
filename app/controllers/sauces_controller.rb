@@ -17,6 +17,11 @@ class SaucesController < ApplicationController
         @sauce = Sauce.find(params[:sauce_id])
         render json: @sauce.wines
     end
+    
+    def show_grapes
+        @sauce = Sauce.find(params[:sauce_id])
+        render json: @sauce.grapes
+    end
 
     def create
         params.each do |key,value|
