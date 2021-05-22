@@ -44,37 +44,37 @@ wine10 = Wine.create(name: "Skeleton Key", has_vintage: false)
 wine11 = Wine.create(name: "P'tit Gaby", has_vintage: true, vintage: 2018)
 wine12 = Wine.create(name: "Astral", has_vintage: true, vintage: 2020)
 
-wine1.subregion << subregion2
-wine6.subregion << subregion2
-wine9.subregion << subregion2
-wine10.subregion << subregion2
-wine12.subregion << subregion1
+wine1.subregions << subregion2
+wine6.subregions << subregion2
+wine9.subregions << subregion2
+wine10.subregions << subregion2
+wine12.subregions << subregion1
 
-wine1.region << region1
-wine2.region << region2
-wine3.region << region3
-wine4.region << region4
-wine5.region << region5
-wine6.region << region1
-wine7.region << region6
-wine8.region << region7
-wine9.region << region1
-wine10.region << region1
-wine11.region << region8
-wine12.region << region9
+wine1.regions << s1
+wine2.regions << region2
+wine3.regions << region3
+wine4.regions << region4
+wine5.regions << region5
+wine6.regions << region1
+wine7.regions << region6
+wine8.regions << region7
+wine9.regions << region1
+wine10.regions << region1
+wine11.regions << region8
+wine12.regions << region9
 
-wine1.country << country1
-wine2.country << country2
-wine3.country << country3
-wine4.country << country2
-wine5.country << country2
-wine6.country << country1
-wine7.country << country3
-wine8.country << country2
-wine9.country << country1
-wine10.country << country1
-wine11.country << country2
-wine12.country << country1
+wine1.countries << country1
+wine2.countries << country2
+wine3.countries << country3
+wine4.countries << country2
+wine5.countries << country2
+wine6.countries << country1
+wine7.countries << country3
+wine8.countries << country2
+wine9.countries << country1
+wine10.countries << country1
+wine11.countries << country2
+wine12.countries << country1
 
 producer1 = Producer.create(name: "Southold Farm + Cellar")
 producer2 = Producer.create(name: "Domaine Yohann Lardy")

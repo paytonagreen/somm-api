@@ -5,12 +5,16 @@ Rails.application.routes.draw do
   resources :producers_wines, only: [:index, :create]
   resources :producers, only: [:index, :show, :show_wines, :show_grapes, :create, :update, :destroy] do
     get '/wines' => 'producers#show_wines'
+  end
   resources :subregions, only: [:index, :show, :show_wines, :show_grapes, :create, :update, :destroy] do
     get '/wines' => 'subregions#show_wines'
+  end
   resources :regions, only: [:index, :show, :show_wines, :show_grapes, :create, :update, :destroy] do
     get '/wines' => 'regions#show_wines'
+  end
   resources :countries, only: [:index, :show, :show_wines, :show_grapes, :create, :update, :destroy] do
     get '/wines' => 'countries#show_wines'
+  end
   resources :grapes_wines, only: [:index, :create]
   resources :accounts_grapes, only: [:index, :create]
   resources :sauces_grapes, only: [:index, :create]
