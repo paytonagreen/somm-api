@@ -1,28 +1,47 @@
 class RegionsController < ApplicationController
     def index
-        @regions_wines = RegionsWine.all
-        render json: @regions_wines
+        @regions = Region.paginate(page: params[:page], per_page: params[:per_page]).order('name')
+        render json: {
+            regions: @regions,
+            total_pages: @regions.total_pages,
+            total_entries: @regions.total_entries
+    }
     end
 
     def show
-        @regions_wine = RegionsWine.find(params[:id])
-        render json: @regions_wine
+        @region = Region.find(params[:id])
+        render json: @region
+    end
+
+    def show_wines
+        @region = Region.find(params[:region_id])
+        render json: @region.wines
+    end
+    
+    def show_grapes
+        @region = Region.find(params[:region_id])
+        render json: @region.grapes
     end
 
     def create
-        @region = Region.find(params[:region_id])
-        @wine = Wine.find(params[:wine_id])
-        @region.wines << @wine
-        render json: @region.wines
+        @region = Region.create(
+            name: params[:name]
+        )
+        render json: @region
     end
 
     def update
+        @region = Region.find(params[:id])
+        @region.update(
+            name: params[:name]
+        )
+        render json: @region
     end
 
     def destroy
-        @regions_wines = RegionsWine.all
-        @regions_wine = Wine.find(params[:id])
-        @regions_wine.destroy
-        render json: @regions_wines
+        @regions = Region.all
+        @region = Region.find(params[:id])
+        render json: @regions
+        @region.destroy
     end
 end
