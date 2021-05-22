@@ -11,6 +11,7 @@ gem 'rails_same_site_cookie', '~> 0.1.8'
 gem 'rack', '~> 2.2', '>= 2.2.3'
 gem 'will_paginate', '~> 3.3'
 gem 'actionmailer_inline_css'
+gem 'dotenv-rails'
 
 group :production do
   gem 'pg', '~> 1.2', '>= 1.2.3'
