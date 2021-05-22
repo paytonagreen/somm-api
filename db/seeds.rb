@@ -50,7 +50,7 @@ wine9.subregions << subregion2
 wine10.subregions << subregion2
 wine12.subregions << subregion1
 
-wine1.regions << s1
+wine1.regions << region1
 wine2.regions << region2
 wine3.regions << region3
 wine4.regions << region4
