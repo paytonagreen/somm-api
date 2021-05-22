@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_20_221823) do
+ActiveRecord::Schema.define(version: 2021_05_22_005505) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 2021_05_20_221823) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "countries_wines", force: :cascade do |t|
+    t.integer "country_id"
+    t.integer "wine_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "grapes", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -48,6 +61,19 @@ ActiveRecord::Schema.define(version: 2021_05_20_221823) do
 
   create_table "grapes_wines", force: :cascade do |t|
     t.integer "grape_id"
+    t.integer "wine_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "producers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "producers_wines", force: :cascade do |t|
+    t.integer "producer_id"
     t.integer "wine_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -66,6 +92,19 @@ ActiveRecord::Schema.define(version: 2021_05_20_221823) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "regions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "regions_wines", force: :cascade do |t|
+    t.integer "region_id"
+    t.integer "wine_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "sauces", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -75,6 +114,19 @@ ActiveRecord::Schema.define(version: 2021_05_20_221823) do
   create_table "sauces_grapes", force: :cascade do |t|
     t.integer "sauce_id"
     t.integer "grape_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "subregions", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "subregions_wines", force: :cascade do |t|
+    t.integer "subregion_id"
+    t.integer "wine_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -94,6 +146,8 @@ ActiveRecord::Schema.define(version: 2021_05_20_221823) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "has_vintage"
+    t.integer "vintage"
   end
 
   create_table "wines_proteins", force: :cascade do |t|

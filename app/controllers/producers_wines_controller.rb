@@ -1,0 +1,2 @@
+class ProducersWinesController < ApplicationController
+end
