@@ -51,5 +51,7 @@ Rails.application.routes.draw do
     get '/wines' => 'accounts#show_wines'
     get '/grapes' => 'accounts#show_grapes'
   end
+  post 'password/forgot', to: 'password#forgot'
+  post 'password/reset', to: 'password#reset'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

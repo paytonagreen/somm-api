@@ -1,0 +1,18 @@
+body {
+  background-color: #80304c;
+  color: #ffc47d;
+  font-family: 'Helvetica';
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #f4f4f4;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

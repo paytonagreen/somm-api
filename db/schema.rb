@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_021919) do
+ActiveRecord::Schema.define(version: 2021_05_22_161439) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "name"
@@ -141,6 +141,8 @@ ActiveRecord::Schema.define(version: 2021_05_22_021919) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "is_admin", default: false
     t.integer "account_id"
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
   end
 
   create_table "wines", force: :cascade do |t|
