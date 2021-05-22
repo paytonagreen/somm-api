@@ -18,7 +18,7 @@ class WinesController < ApplicationController
             producer: @wine.producers[0].name,
             country: @wine.countries[0].name,
             region: @wine.regions[0].name,
-            grapes: @wine.grapes
+            grapes: @wine.grapes,
         }
     end
     
