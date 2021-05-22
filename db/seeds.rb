@@ -14,7 +14,95 @@ protein3 = Protein.create(name: "Fish")
 protein4 = Protein.create(name: "Pork")
 protein5 = Protein.create(name: "Tempeh")
 
-grape1 = Grape.create(name: "Beaujolais", description: "Always a good time")
+country1 = Country.create(name: "United States")
+country2 = Country.create(name: "France")
+country3 = Country.create(name: "Italy")
+
+region1 = Region.create(name: "Texas", country_id: 1)
+region2 = Region.create(name: "Beaujolais", country_id: 2)
+region3 = Region.create(name: "Veneto", country_id: 3)
+region4 = Region.create(name: "Champagne", country_id: 2)
+region5 = Region.create(name: "Alsace", country_id: 2)
+region6 = Region.create(name: "Emilia Romagna", country_id: 3)
+region7 = Region.create(name: "Loire", country_id: 2)
+region8 = Region.create(name: "Rhone", country_id: 2)
+region9 = Region.create(name: "California", country_id: 2)
+
+subregion1 = Subregion.create(name: "Sonoma Country", region_id: 9)
+subregion2 = Subregion.create(name: "High Plains", region_id: 1)
+
+wine1 = Wine.create(name: "Don't Forget To Soar", has_vintage: true, vintage: 2020)
+wine2 = Wine.create(name: "Les Bruyeres", has_vintage: true, vintage: 2018)
+wine3 = Wine.create(name: "Venegazzu", has_vintage: false)
+wine4 = Wine.create(name: "La Cuvee", has_vintage: false)
+wine5 = Wine.create(name: "Cremant d'Alsace Brut", has_vintage: false)
+wine6 = Wine.create(name: "Dandy Rose", has_vintage: true, vintage: 2019)
+wine7 = Wine.create(name: "Lambrusco Di Sorbara", has_vintage: false)
+wine8 = Wine.create(name: "'Exile' Petillant Naturel", has_vintage: true, vintage: 2019)
+wine9 = Wine.create(name: "Tempranillo", has_vintage: true, vintage: 2019)
+wine10 = Wine.create(name: "Skeleton Key", has_vintage: false)
+wine11 = Wine.create(name: "P'tit Gaby", has_vintage: true, vintage: 2018)
+wine12 = Wine.create(name: "Astral", has_vintage: true, vintage: 2020)
+
+wine1.subregion << subregion2
+wine6.subregion << subregion2
+wine9.subregion << subregion2
+wine10.subregion << subregion2
+wine12.subregion << subregion1
+
+wine1.region << region1
+wine2.region << region2
+wine3.region << region3
+wine4.region << region4
+wine5.region << region5
+wine6.region << region1
+wine7.region << region6
+wine8.region << region7
+wine9.region << region1
+wine10.region << region1
+wine11.region << region8
+wine12.region << region9
+
+wine1.country << country1
+wine2.country << country2
+wine3.country << country3
+wine4.country << country2
+wine5.country << country2
+wine6.country << country1
+wine7.country << country3
+wine8.country << country2
+wine9.country << country1
+wine10.country << country1
+wine11.country << country2
+wine12.country << country1
+
+producer1 = Producer.create(name: "Southold Farm + Cellar")
+producer2 = Producer.create(name: "Domaine Yohann Lardy")
+producer3 = Producer.create(name: "Montelvini")
+producer4 = Producer.create(name: "Laurent-Perrier")
+producer5 = Producer.create(name: "Domaine Riefle")
+producer6 = Producer.create(name: "Dandy")
+producer7 = Producer.create(name: "L'onesta")
+producer8 = Producer.create(name: "Lise et Betrand Jousset")
+producer9 = Producer.create(name: "The Austin Winery")
+producer10 = Producer.create(name: "William Chris")
+producer11 = Producer.create(name: "Mas Theo")
+producer12 = Producer.create(name: "Les Lunes")
+
+producer1.wines << wine1
+producer2.wines << wine2
+producer3.wines << wine3
+producer4.wines << wine4
+producer5.wines << wine5
+producer6.wines << wine6
+producer7.wines << wine7
+producer8.wines << wine8
+producer9.wines << wine9
+producer10.wines << wine10
+producer11.wines << wine11
+producer12.wines << wine12
+
+grape1 = Grape.create(name: "Gamay", description: "Always a good time")
 grape2 = Grape.create(name: "Cabernet Sauvignon", description: "An absolute classic")
 grape3 = Grape.create(name: "Chardonnay", description: "Ooooh buttery")
 grape4 = Grape.create(name: "Riesling", description: "Sharply delicious")
@@ -25,6 +113,37 @@ grape8 = Grape.create(name: "Sauvignon Blanc", description: "Flowery good")
 grape9 = Grape.create(name: "Syrah", description: "Flowery good")
 grape10 = Grape.create(name: "Sangiovese", description: "Flowery good")
 grape11 = Grape.create(name: "Zinfandel", description: "Fruity af")
+grape12 = Grape.create(name: "Rousanne", description: "Good")
+grape13 = Grape.create(name: "Gruner", description: "Good")
+grape14 = Grape.create(name: "Glera", description: "Good")
+grape15 = Grape.create(name: "Pinot Blanc", description: "Good")
+grape16 = Grape.create(name: "Pinot Auxerrois", description: "Good")
+grape17 = Grape.create(name: "Mourvedre", description: "Good")
+grape18 = Grape.create(name: "Cinsault", description: "Good")
+grape19 = Grape.create(name: "Lambrusco", description: "Good")
+grape20 = Grape.create(name: "Tempranillo", description: "Good")
+grape21 = Grape.create(name: "Carignan", description: "Good")
+grape22 = Grape.create(name: "Grenache", description: "Good")
+
+
+wine1.grapes << grape1
+wine1.grapes << grape2
+wine2.grapes << grape3
+wine3.grapes << grape14
+wine5.grapes << grape15
+wine5.grapes << grape16
+wine5.grapes << grape16
+wine6.grapes << grape17
+wine6.grapes << grape18
+wine6.grapes << grape9
+wine7.grapes << grape19
+wine8.grapes << grape1
+wine9.grapes << grape20
+wine10.grapes << grape2
+wine11.grapes << grape21
+wine11.grapes << grape9
+wine11.grapes << grape21
+wine11.grapes << grape22
 
 sauce1 = Sauce.create(name: "Barbecue")
 sauce2 = Sauce.create(name: "Balsamic Glaze")
