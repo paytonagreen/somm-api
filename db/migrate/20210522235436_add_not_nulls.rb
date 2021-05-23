@@ -42,6 +42,5 @@ class AddNotNulls < ActiveRecord::Migration[6.1]
     change_column_null(:wines_proteins, :protein_id, false)
     change_column_null(:wines_sauces, :sauce_id, false)
     change_column_null(:wines_sauces, :wine_id, false)
-    
   end
 end

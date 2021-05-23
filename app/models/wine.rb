@@ -13,4 +13,6 @@ class Wine < ApplicationRecord
     has_many :regions, through: :regions_wines
     has_many :subregions_wines
     has_many :subregions, through: :subregions_wines
+    has_many :wines_dishes
+    has_many :dishes, through: :wines_dishes
 end
