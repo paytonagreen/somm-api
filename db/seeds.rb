@@ -52,7 +52,6 @@ dish5 = Dish.create(name: "Chorizo Kofta", description: "Jalapeno Crema, Napa Ca
 dish6 = Dish.create(name: "Rabbit Gnocchi", description: "Sage Parisian Gnocchi, Carrots, Cippolini Onions, Spiced Rabbit Jus, Parmesan, Parsley")
 dish7 = Dish.create(name: "Smash Burger", description: "Double Meat, Double Cheese, Grilled Onions, Romaine, Potato Bun, Fries")
 
-
 wine1.subregions << subregion2
 wine6.subregions << subregion2
 wine9.subregions << subregion2
