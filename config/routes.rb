@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :wines_dishes
+  resources :dishes
   resources :subregions_wines, only: [:index, :create]
   resources :regions_wines, only: [:index, :create]
   resources :countries_wines, only: [:index, :create]

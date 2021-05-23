@@ -1,0 +1,2 @@
+module WinesDishesHelper
+end
