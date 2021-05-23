@@ -44,6 +44,15 @@ wine10 = Wine.create(name: "Skeleton Key", has_vintage: false)
 wine11 = Wine.create(name: "P'tit Gaby", has_vintage: true, vintage: 2018)
 wine12 = Wine.create(name: "Astral", has_vintage: true, vintage: 2020)
 
+dish1 = Dish.create(name: "Seared Tri-Tip", description: "Brussels Sprouts, Celery, Shallots, Tomato, Spiced Steak Sauce, Soy-Lime Vinaigrette")
+dish2 = Dish.create(name: "Contigo Burger", description: "Challah Bun, Windy Bar Ranch Beef, Fries")
+dish3 = Dish.create(name: "Fish & Curry", description: "Farm Vegetables, Coconut Green Curry Broth, Mushroom Tare, Crispy Onion")
+dish4 = Dish.create(name: "Grilled Kale Salad", description: "Freekeh, Strawberry, Spring Onion, Lime, Ginger, Black Garlic, Hazelnuts")
+dish5 = Dish.create(name: "Chorizo Kofta", description: "Jalapeno Crema, Napa Cabbage Slaw, Camp Bread, Fries")
+dish6 = Dish.create(name: "Rabbit Gnocchi", description: "Sage Parisian Gnocchi, Carrots, Cippolini Onions, Spiced Rabbit Jus, Parmesan, Parsley")
+dish7 = Dish.create(name: "Smash Burger", description: "Double Meat, Double Cheese, Grilled Onions, Romaine, Potato Bun, Fries")
+
+
 wine1.subregions << subregion2
 wine6.subregions << subregion2
 wine9.subregions << subregion2

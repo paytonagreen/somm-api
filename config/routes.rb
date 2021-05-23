@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :sauces_grapes, only: [:index, :create]
   resources :proteins_grapes, only: [:index, :create]
   resources :grapes, only: [:index, :show, :create, :update, :destroy]
-  resources :accounts_dishes
+  resources :accounts_dishes, only: [:index, :show, :create, :update, :destroy]
   # global options responder -> makes sure OPTION request for CORS endpoints work
   match '*path', via: [:options], to: lambda {|_| [204, { 'Content-Type' => 'text/plain' }]}
   #user routes
@@ -48,10 +48,11 @@ Rails.application.routes.draw do
     get '/wines' => 'proteins#show_wines'
     get '/grapes' => 'proteins#show_grapes'
   end
-  resources :accounts_wines, only: [:index, :create]
+  resources :accounts_wines, only: [:index, :create, :update, :destroy]
   resources :accounts, only: [:index, :show, :show_wines, :create, :update, :destroy ] do
     get '/wines' => 'accounts#show_wines'
     get '/grapes' => 'accounts#show_grapes'
+    get '/dishes' => 'accounts#show_dishes'
   end
   post 'password/forgot', to: 'passwords#forgot'
   post 'password/reset', to: 'passwords#reset'

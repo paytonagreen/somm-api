@@ -24,9 +24,9 @@ class AccountsWinesController < ApplicationController
     end
 
     def destroy
-        @accounts_wines = WinesProteins.all
-        @accounts_wine = Wine.find(params[:id])
-        @accounts_wine.destroy
+        @account = Account.find(params[:account_id])
+        @account_wine = Wine.find(params[:id])
+        @account.wines.delete(@account_wine.id)
         render json: @accounts_wines
     end
 end

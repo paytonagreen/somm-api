@@ -25,7 +25,7 @@ class DishesController < ApplicationController
 
     def create
         @dish = Dish.create(
-            name: params[:name]
+            name: params[:name],
             description: params[:description]
         )
         render json: @dish
@@ -34,7 +34,7 @@ class DishesController < ApplicationController
     def update
         @dish = Dish.find(params[:id])
         @dish.update(
-            name: params[:name]
+            name: params[:name],
             description: params[:description]
         )
         render json: @dish
